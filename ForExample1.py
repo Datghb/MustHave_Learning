@@ -11,12 +11,13 @@
 # print(result)
 
 
-def is_palindrome(string):
-    cleaner = ''.join(c.lower() for c in string if c.isalum())
-    for i in range(len(string) // 2):
-        if cleaner[i] != cleaner[-(i +1)]:
+import string
+
+def is_palindrome(s):
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    for i in range(len(cleaned) // 2):
+        if cleaned[i] != cleaned[-(i + 1)]:
             return False
     return True
-
 text = "A man a plan a canal Panama"
-print("palindrome?", is_palindrome(text))
+print("Palindrome?" , is_palindrome(text))
